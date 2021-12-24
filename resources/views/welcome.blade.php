@@ -45,6 +45,13 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Contact</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('logout')}}">Log Out</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled text-white" href="#">{{Auth::user()->name ?? ''}}</a>
+          <p ></p>
+        </li>
       </ul>
     </div>
   </div>
