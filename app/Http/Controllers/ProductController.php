@@ -44,7 +44,7 @@ class ProductController extends Controller
         $product = Product::where('name', $request->name)->first();
 
         if(!$product){
-            return redirect()->back()->with('ERROR','tidak ada isinya');
+            return redirect()->back();
         }
 
         $validator = Validator::make($request->all(), [
@@ -53,7 +53,7 @@ class ProductController extends Controller
         ]);
 
         if($validator->fails()){
-            return redirect()->back()->with('Error','Data belum benar');
+            return redirect()->back();
         }
 
         $product->name = $request->n_name;
@@ -61,18 +61,18 @@ class ProductController extends Controller
 
         $product->save();
 
-        return redirect()->back()->with('success','data has been updated');
+        return redirect()->back();
     }
 
     public function delete(Request $request){
         $product = Product::where('name', $request->name)->first();
 
         if(!$product){
-            return redirect()->back()->with('ERROR','tidak ada isinya');
+            return redirect()->back();
         }
 
         $product->delete();
 
-        return redirect()->back()->with('success','data has been deleted');
+        return redirect()->back();
     }
 }
