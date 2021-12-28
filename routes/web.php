@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,4 +29,13 @@ Route::get('/welcome', function(){
     return view('welcome');
 })->name('welcome')->middleware('auth');
 
+
+Route::get('/welcome', [ProductController::class, 'index'])->name('welcome')->middleware('auth');
+
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
+
+Route::post('/add', [ProductController::class, 'insert']);
+
+Route::post('/update', [ProductController::class, 'update']);
+
+Route::post('/delete', [ProductController::class, 'delete']);
