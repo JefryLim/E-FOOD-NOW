@@ -16,7 +16,6 @@ class CreateProductTable extends Migration
         Schema::create('product', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->string('name');
-            $table->longText('desc');
             $table->string('paths');
             $table->timestamps();
         });

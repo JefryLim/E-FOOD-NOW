@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDetailTable extends Migration
+class CreateDetailsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,13 @@ class CreateDetailTable extends Migration
      */
     public function up()
     {
-        Schema::create('detail', function (Blueprint $table) {
-            $table->id();
+        Schema::create('details', function (Blueprint $table) {
+            $table->id()->autoIncrement()->unsigned();
+            $table->product_id()->unsigned();
+            $table->name();
+            $table->ingredients();
+            $table->food_procedure();
+            $table->paths();
             $table->timestamps();
         });
     }
@@ -26,6 +31,6 @@ class CreateDetailTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('detail');
+        Schema::dropIfExists('details');
     }
 }

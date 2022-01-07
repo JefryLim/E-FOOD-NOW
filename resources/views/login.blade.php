@@ -2,10 +2,10 @@
 @section('title', 'Login')
 @section('isi')
     <body class="text-center">
-        <form class="form-signin" method="POST" action="">
+        <form class="form-signin" method="POST" action="" style="background-color: white;
+                border-radius:10px;">
             @csrf
-            <h2 class="h2 mb-3 text-white">Login E-FOOD NOW</h2>
-    
+            <img src="/assets/logo.png" width="70%" height="60%" alt="..." height="36" style="margin-bottom: 3px;">
             <div class="form-floating">
                 <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com">
                 <label for="floatingInput">Email address</label>
@@ -18,12 +18,12 @@
 
             <div class="Create_account mb-3">
                 <label>
-                    <a href="/register" class="h5 text-white">Create account</a>
+                    <a href="/register" class="text-primary" style="font-weight: bold;">Create Account</a>
                 </label>
             </div>
             
-            <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
-            <p class="mt-5 mb-3 text-dark">&copy; E-Food Now 2021</p>
+            <button class="w-100 btn btn-lg btn-dark" type="submit">Login</button>
+            <p class="mt-5 mb-3 text-dark" style="font-weight: bold;">&copy; E-Food Now 2021</p>
         </form>  
     </body>
 @endsection

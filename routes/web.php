@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DetailsController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,8 +30,12 @@ Route::get('/welcome', function(){
     return view('welcome');
 })->name('welcome')->middleware('auth');
 
-
 Route::get('/welcome', [ProductController::class, 'index'])->name('welcome')->middleware('auth');
+Route::get('/welcome/{product_id}', [DetailsController::class, 'detailShow']);
+
+Route::get('/about',function(){
+    return view('about');
+});
 
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
 
